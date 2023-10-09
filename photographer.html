@@ -1,37 +1,106 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <link href="css/style.css" rel="stylesheet" type="text/css" />
-    <meta charset="utf-8">
-    <link rel="icon" type="image/png" href="assets/favicon.png">
-    <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
-    <title>Fisheye - photographe </title>
-  </head>
-  <body>
-    <header>
-      <img src="assets/images/logo.png" class="logo" />
-    </header>
-    <main id="main">
-      <div class="photograph-header">
-        <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
+
+<head>
+  <meta charset="utf-8">
+  <!-- Lien vers la feuille de style CSS -->
+  <link href="css/style.css" rel="stylesheet" type="text/css" />
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <!-- Lien vers la feuille de style CSS -->
+  <link href="css/style.css" rel="stylesheet" type="text/css" />
+  <!-- icônes de Font Awesome -->
+  <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
+  <!-- Lien vers la feuille de style CSS -->
+  <link href="css/style.css" rel="stylesheet" type="text/css" />
+  <!-- Titre de la page -->
+  <title>Fisheye - photographe </title>
+</head>
+
+<body>
+  <header>
+    <!-- Lien vers la page d'accueil -->
+    <a href='./index.html'>
+      <!-- Logo du site -->
+      <img src="assets/images/logo.png" class="logo" alt='Fisheye Page accueil' />
+  </header>
+  <main id='main-photographer' aria-hidden='false'>
+    <!-- Section pour l'en-tête du photographe -->
+    <div class='photograph-header'></div>
+    <!-- Section pour le contenu du photographe -->
+    <div class='photograph-body'>
+      <div class='FilterField'>
+        <!-- création de filtre -->
+        Trier par :
+        <button tabindex='0' class='filterField_select' aria-expanded='false' aria-haspopup='true'>
+          <span id='filterField_select-label'>
+            <span id='sortType'>Popularité </span>
+            <img id='select-arrow' class='down' src='./assets/icons/LightboxArrowlist.svg' alt='decrease sense'>
+          </span>
+          <ul role='listbox' class='filterField_select-list hidden'>
+            <li role='option' id='pop' aria-selected='false' class='filterField_select-list-item'>Popularité</li>
+            <li role='option' id='date' aria-selected='false' class='filterField_select-list-item'>Date</li>
+            <li role='option' id='titre' aria-selected='false' class='filterField_select-list-item'>Titre</li>
+          </ul>
+        </button>
       </div>
-    </main>
-    <div id="contact_modal">
-			<div class="modal">
-				<header>
-          <h2>Contactez-moi</h2>
-          <img src="assets/icons/close.svg" onclick="closeModal()" />
-        </header>
-				<form>
-					<div>
-						<label>Prénom</label>
-						<input />
-					</div>
-          <button class="contact_button">Envoyer</button>
-				</form>
-			</div>
-		</div>
-    <script src="/scripts/pages/photographer.js"></script>
-    <script src="/scripts/utils/contactForm.js"></script>
-  </body>
+    </div>
+
+  </main>
+  <!-- Lightbox pour affichage des images-->
+
+  <div class='lightbox-Bg hidden' aria-hidden='true'>
+    <div class='lightbox' role='dialog' aria-label='Vue rapprochée'>
+      <div class='lightbox_close_btn-div'>
+        <!-- Bouton fermeture de la lightbox -->
+        <img role='button' class='lightbox_Close-btn' aria-label='Fermer la fenêtre de dialogue'
+          aria-roledescription="Fermer la fenêtre" src='./assets/icons/LightboxCloseBtn.svg' alt='Bouton de fermeture'>
+      </div>
+      <figure class='lightbox_media-Container'>
+      </figure>
+      <img class='prev' role='button' src='assets/icons/LightboxArrow.svg' alt='media précédent'>
+      <img class='next' role='button' src='assets/icons/LightboxArrow.svg' alt='media suivant'>
+    </div>
+  </div>
+  <!-- Modal de contact -->
+  <div id="contact_modal" role='dialog' aria-hidden='true'>
+    <div class="modal" aria-labelledby=' modalTitle'>
+      <header>
+        <!-- titre Modal de contact -->
+        <h2 id='modalTitle' class='visible'>Contactez-moi</h2>
+        <img src="assets/icons/close.svg" onclick="closeModal()" aria-labelledby='Close Contact form' />
+      </header>
+      <form name='reserve' class='reserve visible'>
+        <!-- formulaire de contact -->
+        <div class='formData'>
+          <label for='first' id='firstLabel' class='text-label'>Prénom</label>
+          <input class='text-control' type='text' id='first' name='first' minlength='2' autocomplete='given-name'
+            aria-autocomplete='inline' aria-labelledby='First name'>
+        </div>
+        <div class='formData'>
+          <label for='last' id='lastLabel' class='text-label'>Nom</label>
+          <input class='text-control' type='text' id='last' name='last' minlength='2' autocomplete='family-name'
+            aria-autocomplete='inline' aria-labelledby='Last name'>
+        </div>
+        <div class='formData'>
+          <label for='email' id='emailLabel' class='text-label'>E-mail</label>
+          <input class='text-control' type='email' id='email' name='email' autocomplete='off' aria-autocomplete='none'
+            aria-labelledby='Email'>
+        </div>
+        <div class='formData'>
+          <label for='txtMsg' id='txtMsgLabel' class='text-label'>Votre message</label>
+          <textarea id='txtMsg' class='text-control' name='txtMsg' minlength='50' maxlength='200'
+            aria-labelledby='Your message'></textarea>
+        </div>
+        <button class='submit-btn' type='submit' aria-label='Send'>Envoyer</button>
+      </form>
+      <p class='modal_validate hidden'> Votre message a bien été envoyé!</p>
+      <button id='btn-close' class='hidden' aria-label="Fermer le formulaire de contact">Fermer</button>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script type="module" src="/scripts/pages/photographer.js"></script>
+  <script type="module" src="/scripts/utils/contactForm.js"></script>
+</body>
+
 </html>

@@ -1,21 +1,34 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <link href="css/style.css" rel="stylesheet" type="text/css" />
-    <meta charset="utf-8">
-    <link rel="icon" type="image/png" href="assets/favicon.png">
-    <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
-    <title>Fisheye</title>
-  </head>
-  <body>
-    <header>
-        <img src="assets/images/logo.png" class="logo" alt="fisheye logo"/>
-        <h1>Nos photographes</h1>
-    </header>
-    <main id="main">
-        <div class="photographer_section"></div>
-    </main>
-    <script src="scripts/templates/photographer.js"></script>
-    <script src="scripts/pages/index.js"></script>
-  </body>
+
+<head>
+
+  <meta charset="utf-8">
+  <!-- Icône du site -->
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <!-- Lien vers la police de caractères -->
+  <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
+  <!-- lien vers feuille css -->
+  <link href="css/style.css" rel="stylesheet" type="text/css" />
+  <!-- Titre de la page -->
+  <title>Fisheye</title>
+</head>
+
+<body>
+  <header>
+    <!-- Logo du site -->
+    <img src="assets/images/logo.png" class="logo" alt="fisheye logo" alt='Fisheye Home Page' />
+    <!-- Titre de la page -->
+    <h1>Nos photographes</h1>
+  </header>
+  <main id="main">
+    <!-- Section qui affiche les photographes -->
+    <div class="photographer_section"></div>
+  </main>
+  <!-- Script pour générer les photographes-->
+  <script type="module" src="scripts/templates/photographerFact.js"></script>
+  <!-- Script de la page d'index -->
+  <script type="module" src="scripts/pages/index.js"></script>
+</body>
+
 </html>
