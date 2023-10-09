@@ -2,10 +2,10 @@
  * Fabrique de photographes.
  * @function
  * @param {Object} data - Données du photographe.
- * @returns {Object}  - Objet avec les fonctions pour obtenir le DOM du photographe
+ * @returns {Object}  - Objet avec fonctions pour obtenir le DOM du photographe
  */
 function photographerFact(data) {
-    // Récupérer les données du photographe
+    // Récupère les données du photographe
     const { name, id, city, country, tagline, price, portrait } = data;
     let picture = `./assets/photographers/${portrait}`;
     /**
