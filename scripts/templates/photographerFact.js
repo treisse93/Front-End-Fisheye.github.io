@@ -99,8 +99,8 @@ function photographerFact(data) {
     citation.setAttribute('aria-label', `${tagline}`);
     citation.setAttribute('tabindex', '0');
     // Création du nom dans la modale
-    const Photographername = document.getElementById('photographerName');
-    Photographername.textContent = '${name}';
+    const Photographername = document.getElementById('photographerName'); // verif id
+    Photographername.textContent = `${name}`;
     // Création du prix de l'artiste
     const priceDOM = document.createElement('p');
     priceDOM.classList.add('artistePricing');
