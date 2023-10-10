@@ -285,8 +285,13 @@ a {
   font-weight: 500;
 }
 
+.media-likes i {
+  padding-left: 5px;
+}
+
 .media-likes.liked i {
   animation: pulse 0.2s;
+  padding-left: 5px;
 }
 
 @keyframes pulse {
@@ -304,6 +309,7 @@ a {
 .media-link {
   cursor: pointer;
   height: 351px;
+  margin-top: 20px;
 }
 
 .TotalLikes {

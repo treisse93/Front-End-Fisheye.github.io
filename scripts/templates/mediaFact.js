@@ -88,7 +88,7 @@ class Image extends Media {
     mediaLink.setAttribute("type", "image/jpg");
     mediaLink.id = this.id;
 
-    console.log (mediaLink)
+    console.log(mediaLink);
 
     // Création du container du media
     const imgContainer = document.createElement("div"); // création élément
@@ -117,7 +117,7 @@ class Image extends Media {
     mediaLikes.setAttribute("aria-label", `${this.likes} likes`);
 
     const mediaLikesIcon = document.createElement("i");
-    mediaLikesIcon.classList.add("fa-solid", "fa-heart");
+    mediaLikesIcon.classList.add("far", "fa-heart");
     mediaLikes.appendChild(mediaLikesIcon);
 
     mediaLikes.addEventListener("click", (e) => {
