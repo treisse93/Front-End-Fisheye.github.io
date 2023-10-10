@@ -22,6 +22,7 @@
     <a href='./index.html'>
       <!-- Logo du site -->
       <img src="assets/images/logo.png" class="logo" alt='Fisheye Page accueil' />
+    </a>
   </header>
   <main id='main-photographer' aria-hidden='false'>
     <!-- Section pour l'en-tête du photographe -->
@@ -38,7 +39,9 @@
           </span>
           <ul role='listbox' class='filterField_select-list hidden'>
             <li role='option' id='pop' aria-selected='false' class='filterField_select-list-item'>Popularité</li>
+            <div class="line"></div>
             <li role='option' id='date' aria-selected='false' class='filterField_select-list-item'>Date</li>
+            <div class="line"></div>
             <li role='option' id='titre' aria-selected='false' class='filterField_select-list-item'>Titre</li>
           </ul>
         </button>
@@ -52,8 +55,9 @@
     <div class='lightbox' role='dialog' aria-label='Vue rapprochée'>
       <div class='lightbox_close_btn-div'>
         <!-- Bouton fermeture de la lightbox -->
-        <img role='button' class='lightbox_Close-btn' aria-label='Fermer la fenêtre de dialogue'
-          aria-roledescription="Fermer la fenêtre" src='./assets/icons/LightboxCloseBtn.svg' alt='Bouton de fermeture'>
+        <img role='button' class='lightbox_Close-btn' aria-label='Fermer la fenêtre de la lightbox'
+          aria-roledescription="Fermer la fenêtre" src='./assets/icons/LightboxCloseBtn.svg'
+          alt='Bouton de fermeture de la lightox'>
       </div>
       <figure class='lightbox_media-Container'>
       </figure>
@@ -79,29 +83,29 @@
         </h2>
 
         <!-- Bouton de fermeture de la modal de contact -->
-        <img role='button' tabindex='0' class='close' aria-label='bouton de cloture de la modale'
+        <img role='button' tabindex='0' class='close' aria-label='bouton de fermture de la modale'
           src='./assets/icons/close.svg' alt=''>
       </header>
       <form name='reserve' class='reserve visible'>
         <div class='formData'>
           <label for='first' id='firstLabel' class='text-label'>Prénom</label>
           <input class='text-control' type='text' id='first' name='first' minlength='2' autocomplete='given-name'
-            aria-autocomplete='inline' aria-labelledby='firstLabel'>
+            aria-autocomplete='inline' aria-labelledby='champ prénom'>
         </div>
         <div class='formData'>
           <label for='last' id='lastLabel' class='text-label'>Nom</label>
           <input class='text-control' type='text' id='last' name='last' minlength='2' autocomplete='family-name'
-            aria-autocomplete='inline' aria-labelledby='lastLabel'>
+            aria-autocomplete='inline' aria-labelledby='champ nom'>
         </div>
         <div class='formData'>
           <label for='email' id='emailLabel' class='text-label'>E-mail</label>
           <input class='text-control' type='email' id='email' name='email' autocomplete='off'
-            aria-labelledby='emailLabel'>
+            aria-labelledby='champ email'>
         </div>
         <div class='formData'>
           <label for='txtMsg' id='txtMsgLabel' class='text-label'>Votre message</label>
           <textarea id='txtMsg' class='text-control' name='txtMsg' minlength='50' maxlength='200'
-            aria-labelledby='txtMsgLabel'></textarea>
+            aria-labelledby='champ message'></textarea>
         </div>
         <button class='submit-form-btn' type='submit' aria-label='Send'>Envoyer</button>
       </form>

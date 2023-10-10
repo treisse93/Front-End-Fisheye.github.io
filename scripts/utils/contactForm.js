@@ -17,7 +17,7 @@ const form = document.querySelector("form.reserve");
 const inputFirstName = document.forms.reserve.first;
 const inputLastName = document.forms.reserve.last;
 const inputEmail = document.forms.reserve.email;
-const inputText = document.forms.reserve.txtMsg;
+const inputText = document.forms.reserve.txtMsg; //
 
 // Régex pour la validation des champs texte
 const regexpEmail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
