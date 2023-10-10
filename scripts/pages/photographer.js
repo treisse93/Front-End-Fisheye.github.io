@@ -76,7 +76,7 @@ function displayData(photograph, medias) {
   const rawMedias = MediaFact(medias);
   const mediaModels = rawMedias.mediaElements;
   const Totalizer = rawMedias.TotalizeLikes;
-  TotalLikes.innerHTML = `${Totalizer} <i aria-label="likes" class="fa-solid fa-heart"></i>`; 
+  TotalLikes.innerHTML = `${Totalizer} <i aria-label="likes" class="fas fa-heart"></i>`; 
   selectItems.forEach((item) => {
     item.addEventListener("click", (event) => {
       event.stopPropagation();

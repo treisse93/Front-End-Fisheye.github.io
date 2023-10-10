@@ -293,7 +293,7 @@ class Video extends Media {
         const totalLikes = document.querySelector(".TotalLikes");
         totalLikes.innerHTML = `${
           Number(totalLikes.textContent) - 1
-        } <i aria-label='likes' class='fas fa-heart' aria-hidden='true'></i>`;
+        } <i aria-label='likes' class='far fa-heart' aria-hidden='true'></i>`;
         mediaLikes.appendChild(mediaLikesIcon);
       }
     });
