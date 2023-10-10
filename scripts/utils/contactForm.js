@@ -246,7 +246,7 @@ function validateText() {
     formfieldsObjects[3].message = "Veuillez entrer au minimum 50 caractères.";
     return false;
   }
-  if (inputText.value.trim().length > 20) {
+  if (inputText.value.trim().length > 200) {
     //minimum 50 caractères
     formfieldsObjects[3].message = "Veuillez entrer au maximum 200 caractères.";
     return false;

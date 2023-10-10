@@ -54,7 +54,7 @@ function photographerFact(data) {
     // Création du prix de l'artiste
     const pricing = document.createElement("p");
     pricing.classList.add("artistePricing");
-    pricing.textContent = `${price}€/jour`;
+    pricing.textContent = `${price}€ / jour`;
     // Construction du module Final de la carte
     article.appendChild(figureContainer); // création du container personnalisé
     figureContainer.appendChild(infosContainer); // Ajout du bloc d'informations supplémentaires
@@ -66,7 +66,7 @@ function photographerFact(data) {
   /**
    * Obtient le DOM de la page du photographe.
    * @returns {HTMLElement} Le DOM de la page du photographe.
-   */
+   */ // affiche info de l'artiste dans la page photographe
   function getUserPageDOM() {
     // Création de la page du photographe
     picture = `./assets/photographers/${portrait}`;
@@ -104,7 +104,7 @@ function photographerFact(data) {
     // Création du prix de l'artiste
     const priceDOM = document.createElement("p");
     priceDOM.classList.add("artistePricing");
-    priceDOM.textContent = `${price}€/jour`;
+    priceDOM.textContent = `${price}€ / jour`; // affiche le prix de l'artiste dans la page photographe
     priceDOM.setAttribute("aria-label", `${price}€/jour`);
     // Création du container du portrait
     const portraitContainer = document.createElement("span");
@@ -118,8 +118,8 @@ function photographerFact(data) {
     // Récupération du bouton Contact
     const contactButton = document.createElement("button");
     contactButton.classList.add("contact_button");
-    contactButton.textContent = "Contactez-moi";
-    contactButton.setAttribute("aria-label", "Contact me");
+    contactButton.textContent = "Contactez-moi"; // affiche text bouton contact page photographe
+    contactButton.setAttribute("aria-label", "Contactez moi"); // affiche arialabel
     UserInfosContainer.appendChild(UserInfosText);
     UserInfosContainer.appendChild(portraitContainer);
     UserInfosContainer.appendChild(contactButton);
