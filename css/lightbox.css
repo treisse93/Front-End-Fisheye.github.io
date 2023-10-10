@@ -77,14 +77,13 @@
 .next {
   /* Boutons précédent et suivant */
   position: absolute;
-  top: 50%;
-  height: 80px;
+  margin-top: 35vh;
   opacity: 0.4;
 }
 
 .next {
   /* Style du bouton suivant */
-  right: 25px;
+  margin-left: -3vh;
   transform: translateY(-50%) rotate(0);
   transition: opacity 0.5s ease;
 }
@@ -97,8 +96,8 @@
 
 .prev {
   /* Style du bouton précédent */
-  left: 25px;
-  top: 50%;
+  left: -10px;
+  margin-left: -85vh;
   transform: translateY(-50%) rotate(180deg);
 
   transition: opacity 0.5s ease;
@@ -114,7 +113,7 @@
   /* Conteneur des médias */
   display: flex;
   flex-direction: column;
-  height: 90vh;
+  height: 88vh;
   width: 80vh;
   max-width: 80%;
   /* Gestion du débordement */
@@ -122,6 +121,7 @@
   /* Ordre d'affichage */
   order: 1;
   margin: auto;
+  margin-top: 30px;
 }
 
 .LightboxIn {
@@ -130,7 +130,7 @@
   object-fit: cover;
   object-position: center;
   width: 99%;
-  height: 95%;
+  height: 90%;
   box-shadow: 2px 0 0 0px lightgrey;
   box-sizing: content-box;
   border-radius: 5px;
@@ -139,7 +139,7 @@
 
 .LightboxInTitle {
   /* Titre de la carte des médias */
-  height: 5%;
+  height: 10%;
   font-size: 125%;
   font-weight: bold;
   color: #901c1c;

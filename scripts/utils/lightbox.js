@@ -135,7 +135,7 @@ class LightBox {
       return document.createElement("img");
     }
     const videoElement = document.createElement("video");
-    videoElement.setAttribute("controls", "true");
+    videoElement.setAttribute("controls", "true"); // ajoute le panneau de control
     return videoElement;
   }
 
@@ -258,7 +258,7 @@ class LightBox {
     this.lightboxBG.classList.remove("hidden");
     this.lightboxBG.classList.add("visible");
     this.lightboxBG.setAttribute("aria-hidden", "false"); //déclare l'aria de la variable
-    this.getMedia(this.currentMediaIndex); 
+    this.getMedia(this.currentMediaIndex);
   }
 
   /**
