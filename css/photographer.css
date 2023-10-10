@@ -22,6 +22,10 @@
   margin-bottom: 0;
 }
 
+a {
+  text-decoration: none;
+}
+
 /* Styles généraux */
 #main-photographer {
   display: flex;
@@ -51,6 +55,10 @@
   border-radius: 4px;
   margin-right: 20px;
   padding: 10px 0;
+  color: #fff;
+  font-family: DM Sans;
+  font-size: 18px;
+  font-weight: 700;
 }
 
 /* En-tête du photographe */
@@ -80,8 +88,9 @@
 }
 
 .artisteName {
+  width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   color: #d3573c;
   font-size: 2.5rem;
@@ -122,10 +131,16 @@
   align-items: center;
   margin: 0;
   padding: 20px;
-  width:fit-content
+  width: fit-content;
+  color: #000;
+  font-family: DM Sans;
+  font-size: 18px;
+  font-weight: 700;
 }
 
 .filterField_select {
+  width: 220px;
+  height: 70px;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -135,7 +150,7 @@
   padding: 4px 8px;
   background-color: #901c1c;
   color: white;
-  margin: 0 20px;
+  margin: 0 25px;
   width: 130px;
   border-radius: 4px;
   border: none;
@@ -195,10 +210,9 @@
 }
 
 .media-card {
-  width: 300px;
+  width: 350px;
   height: 350px;
   background-color: #fafafa;
-  margin: 20px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -213,6 +227,7 @@
   object-fit: cover;
   object-position: center;
   overflow: hidden;
+  border-radius: 5px;
 }
 
 .media {
@@ -233,18 +248,21 @@
 }
 
 .media-infos .media-title {
-  font-size: 12px;
-  font-weight: bold;
   color: #901c1c;
-  text-align: center;
+  font-family: DM Sans;
+  font-size: 24px;
+  font-weight: 400;
 }
 
 .media-likes {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 12px;
   font-weight: bold;
+  color: #901c1c;
+  font-family: DM Sans;
+  font-size: 24px;
+  font-weight: 500;
 }
 
 .media-likes.liked i {
@@ -265,6 +283,7 @@
 
 .media-link {
   cursor: pointer;
+  height: 351px;
 }
 
 .TotalLikes {
@@ -276,10 +295,25 @@
   width: 50px;
 }
 
-.fa-heart {
+.fa-solid {
+  margin-left: 5px;
   color: #901c1c;
   font-size: 1.2rem;
   padding-left: 5px;
+}
+
+.submit-btn {
+  width: 25.4%;
+  height: 69px;
+  border-radius: 5px;
+  background: #901c1c;
+  color: #fff;
+  text-align: center;
+  font-family: DM Sans;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
 }
 
 .submit-form-btn,
@@ -332,6 +366,9 @@
   box-sizing: border-box;
 }
 
+#contact_modal {
+  margin-left: 26.7%;
+}
 .contact_modal {
   position: fixed;
   justify-content: center;
@@ -365,8 +402,8 @@
   box-sizing: content-box;
 }
 
-#modalTitle,
-#modalTitle_Validate {
+#modalTitle {
+  color: black;
   flex-direction: column;
   font-size: 48px;
   font-weight: normal;
@@ -376,6 +413,8 @@
 }
 
 #modalTitle_Validate {
+  flex-direction: column;
+  color: black;
   font-size: 36px;
   width: 100%;
   margin: 0 -50px 0 auto;
@@ -470,9 +509,12 @@ form input {
   width: 400px;
   background-color: #db8876;
   font-weight: bold;
+  color: black;
+  border-radius: 5px 5px 0px 0px;
 }
 
 .resumeContainer i {
+  margin-left: 5px;
   color: black;
   font-size: 1.2rem;
 }

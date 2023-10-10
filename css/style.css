@@ -1,5 +1,5 @@
 @import url("photographer.css");
-@import url("lightBox.css");
+@import url("lightbox.css");
 
 /*======================
         GÉNÉRAL
@@ -114,6 +114,9 @@ h1 {
   text-transform: capitalize;
   font-style: normal;
   font-size: 1rem;
+  font-family: DM Sans;
+  font-size: 24px;
+  font-weight: 400;
 }
 
 .photographer_section .MoreInfos {
@@ -133,6 +136,9 @@ h1 {
   font-weight: 700;
   margin: 0.2rem;
   color: #525252;
+  font-family: DM Sans;
+  font-size: 18px;
+  font-weight: 400;
 }
 
 .photographer_section .artistePricing {
