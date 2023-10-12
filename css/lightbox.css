@@ -76,14 +76,16 @@
 .prev,
 .next {
   /* Boutons précédent et suivant */
+  background-color: white;
+  border: none;
   position: absolute;
   margin-top: 35vh;
   opacity: 0.4;
 }
 
 .next {
+  margin-left: 1.5vh;
   /* Style du bouton suivant */
-  margin-left: -3vh;
   transform: translateY(-50%) rotate(0);
   transition: opacity 0.5s ease;
 }
@@ -96,7 +98,6 @@
 
 .prev {
   /* Style du bouton précédent */
-  left: -10px;
   margin-left: -85vh;
   transform: translateY(-50%) rotate(180deg);
 
@@ -107,6 +108,10 @@
   /* Effet d'agrandissement et rotation au survol */
   transform: translateY(-50%) scale(1.5) rotate(180deg);
   opacity: 1;
+}
+
+.fa-angle-right {
+  font-size: 50px;
 }
 
 .lightbox_media-Container {
