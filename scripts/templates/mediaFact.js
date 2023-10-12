@@ -127,7 +127,9 @@ class Image extends Media {
         mediaLikes.classList.add("liked");
         mediaLikesIcon.classList.remove("far");
         mediaLikesIcon.classList.add("fas");
-        mediaLikes.textContent = `${newLikes} `;
+        mediaLikes.textContent = `${newLikes}`;
+        mediaLikes.removeAttribute("aria-label");
+        mediaLikes.setAttribute("aria-label", `${newLikes} likes`);
         const totalLikes = document.querySelector(".TotalLikes");
         totalLikes.innerHTML = `${
           Number(totalLikes.textContent) + 1
@@ -142,6 +144,7 @@ class Image extends Media {
         mediaLikesIcon.classList.add("far");
 
         mediaLikes.textContent = `${newLikes} `;
+        mediaLikes.setAttribute("aria-label", `${newLikes} likes`);
         const totalLikes = document.querySelector(".TotalLikes");
         totalLikes.innerHTML = `${
           Number(totalLikes.textContent) - 1
@@ -271,12 +274,14 @@ class Video extends Media {
     mediaLikes.addEventListener("click", (e) => {
       e.stopPropagation(); // Ajout de la ligne pour empêcher la propagation de l'événement
       if (!mediaLikes.classList.contains("liked")) {
-        const newLikes = this.increaseLikes();
+        const newLikes = this.increaseLikes(); // augmente nombre like
         mediaLikes.classList.add("liked");
-        mediaLikesIcon.classList.remove("far");
-        mediaLikesIcon.classList.add("fas");
-        mediaLikes.innerHTML = `${newLikes} `;
-        const totalLikes = document.querySelector(".TotalLikes");
+        mediaLikesIcon.classList.remove("far"); // enlève coeur aspect vide
+        mediaLikesIcon.classList.add("fas"); // ajoute coeur aspect rempli
+        mediaLikes.innerHTML = `${newLikes}`; //inscrit le nombre de like à jour
+        mediaLikes.removeAttribute("aria-label");
+        mediaLikes.value("aria-label", `${newLikes} likes`); // modifie nombre de like
+        const totalLikes = document.querySelector(".TotalLikes"); //modifie le nombre total like fin de page
         totalLikes.innerHTML = `${
           Number(totalLikes.textContent) + 1
         } <i aria-label='${
@@ -284,12 +289,12 @@ class Video extends Media {
         } likes' class='fas fa-heart'></i>`;
         mediaLikes.appendChild(mediaLikesIcon);
       } else {
-        const newLikes = this.decreaseLikes();
+        const newLikes = this.decreaseLikes(); //diminue nombre like
         mediaLikes.classList.remove("liked");
-        mediaLikesIcon.classList.remove("fas");
-        mediaLikesIcon.classList.add("far");
+        mediaLikesIcon.classList.remove("fas"); //enlève coeur apect rempli
+        mediaLikesIcon.classList.add("far"); //ajoute coeur aspect vide
         mediaLikesIcon.setAttribute("aria-hidden", "false");
-        mediaLikes.textContent = `${newLikes} `;
+        mediaLikes.textContent = `${newLikes} `; //inscrit le nombre de like à jour
         const totalLikes = document.querySelector(".TotalLikes");
         totalLikes.innerHTML = `${
           Number(totalLikes.textContent) - 1

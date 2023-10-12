@@ -1,0 +1,16 @@
+{
+  "name": "projet_6_site_accessible",
+  "version": "1.0.0",
+  "description": "Rien à installer ici, il suffit d'ouvrir le fichier `index.html`.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "http-server",
+    "lint": "eslint *.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^8.51.0",
+    "eslint-config-google": "^0.14.0"
+  }
+}

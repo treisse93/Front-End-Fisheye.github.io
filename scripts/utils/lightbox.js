@@ -202,28 +202,28 @@ class LightBox {
       });
       this.lightboxBG.addEventListener("keydown", (e) => {
         if (e.key === "Escape" || e.key === 27) {
-          this.close();
+          this.close(); //si touche échap, ferme la lightbox
         }
       });
 
       document.addEventListener("click", (e) => {
         if (e.target === this.lightboxBG && e.target !== this.lightbox) {
-          this.close();
+          this.close(); //si click lightboxBG ou en dehors de la lightbox, ferme la lightbox
         }
       });
       document.addEventListener("keydown", (e) => {
         if (e.key === "Escape" || e.key === 27) {
-          this.close();
+          this.close(); //si touche échap, ferme la lightbox
         }
       });
 
       this.prevMedia.addEventListener(
         "click",
-        this.switchToPreviousMedia.bind(this)
+        this.switchToPreviousMedia.bind(this) //si click chevron droit, ferme la lightbox
       );
       this.nextMedia.addEventListener(
         "click",
-        this.switchToNextMedia.bind(this)
+        this.switchToNextMedia.bind(this) //si click chevron gauche, ferme la lightbox
       );
 
       document.addEventListener("keydown", (e) => {
@@ -233,7 +233,7 @@ class LightBox {
           this.switchToPreviousMedia(); // affiche le media précédent
         }
         if (e.key === "ArrowRight" || e.key === 39) {
-          // 39 si flèche droite
+          // 39 si flèche gauche
           this.switchToNextMedia(); // affiche le media suivant
         }
       });
@@ -266,7 +266,6 @@ class LightBox {
    */
   close() {
     const currentMedia = document.querySelector(".currentMedia");
-    currentMedia.classList.remove("currentMedia");
     const body = document.getElementById("main-photographer");
     body.setAttribute("aria-hidden", "false");
     this.lightboxBG.classList.remove("visible");

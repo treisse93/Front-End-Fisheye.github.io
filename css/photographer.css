@@ -193,6 +193,21 @@ a {
   background-color: #901c1c;
 }
 
+.filterField_select-item {
+  padding: 15px 15px;
+  margin: 0 auto;
+  cursor: pointer;
+  background-color: #901c1c;
+  color: white;
+  width: 170px;
+  height: 53px;
+  text-align: start;
+  color: #fff;
+  font-family: DM Sans;
+  font-size: 18px;
+  font-weight: 700;
+}
+
 .filterField_select-list-item {
   padding: 15px 15px;
   margin: 0 auto;
