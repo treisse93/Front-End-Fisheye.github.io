@@ -24,7 +24,7 @@ const regexpEmail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
 const regexpFirstName = /^[a-zA-Z\s]+$/;
 const regexpLastName = /^[a-zA-Z\s]+$/;
 
-// Liste des objets à vérifier + conditions + messages d'erreur si besoin
+// Liste des objets à vérifier + conditions + messages de retour en cas d'erreur
 const formfieldsObjects = [
   {
     formfield: inputFirstName,
@@ -151,29 +151,6 @@ function closeForm() {
 /**
  * Confirme la validation du formulaire.
  */
-function confirmValidation() {
-  // const valide = true; pour tester le formulaire valide
-  if (validate()) {
-    console.log("Formulaire valide");
-    console.log("firstName", inputFirstName.value);
-    console.log("lastName", inputLastName.value);
-    console.log("Email", inputEmail.value);
-    console.log("message", inputText.value);
-    modalTitle.classList.add("hidden");
-    modalTitle.classList.remove("visible");
-    form.classList.add("hidden");
-    form.classList.remove("visible");
-    modalTitleValidation.classList.remove("hidden");
-    modalTitleValidation.classList.add("visible");
-    CloseModalBtn.classList.remove("hidden");
-    CloseModalBtn.classList.add("visible");
-    ValidateModal.classList.remove("hidden");
-    ValidateModal.classList.add("visible");
-    CloseModalBtn.focus();
-
-    alreadyValidate = true;
-  }
-}
 
 /**
  * Valide le prénom.
@@ -283,6 +260,30 @@ function validate() {
     }
   }
   return formIsTrue;
+}
+
+function confirmValidation() {
+  // const valide = true; pour tester le formulaire valide
+  if (validate()) {
+    console.log("Formulaire valide");
+    console.log("firstName", inputFirstName.value);
+    console.log("lastName", inputLastName.value);
+    console.log("Email", inputEmail.value);
+    console.log("message", inputText.value);
+    modalTitle.classList.add("hidden");
+    modalTitle.classList.remove("visible");
+    form.classList.add("hidden");
+    form.classList.remove("visible");
+    modalTitleValidation.classList.remove("hidden");
+    modalTitleValidation.classList.add("visible");
+    CloseModalBtn.classList.remove("hidden");
+    CloseModalBtn.classList.add("visible");
+    ValidateModal.classList.remove("hidden");
+    ValidateModal.classList.add("visible");
+    CloseModalBtn.focus();
+
+    alreadyValidate = true;
+  }
 }
 
 export default displayModal;

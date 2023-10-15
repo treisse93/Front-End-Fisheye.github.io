@@ -56,7 +56,7 @@ class Image extends Media {
    * Création instance de Image.
    * @constructor
    * @param {number} id - ID de l'image.
-   * @param {string} title -btitre de l'image.
+   * @param {string} title - titre de l'image.
    * @param {number} likes - nombre de likes de l'image.
    * @param {string} date - date de l'image.
    * @param {string} image - nom du fichier
@@ -99,6 +99,7 @@ class Image extends Media {
     img.classList.add("media"); //ajout de l'élement dans la class
     img.setAttribute("src", path);
     img.setAttribute("aria-labelledby", `${this.id}`);
+    img.setAttribute("alt", `${this.title}`);
 
     // Création des infos du media
     const MediasInfos = document.createElement("div");
@@ -250,7 +251,7 @@ class Video extends Media {
     const video = document.createElement("video");
     video.classList.add("media");
     video.setAttribute("src", path);
-    video.setAttribute("alt", "");
+    video.setAttribute("alt", `${this.title}`);
     video.setAttribute("type", "video/mp4");
 
     // Création des infos du media
