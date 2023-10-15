@@ -195,6 +195,7 @@ function validateFirstName() {
       "Le champ doit comporter un minimum de 2 caractères alphabétiques.";
     return false;
   }
+  // si regexp non respectée
   if (!regexpFirstName.test(inputFirstName.value.trim())) {
     formfieldsObjects[0].message =
       "Le champ doit comporter seulement des caractères alphabétiques.";
@@ -217,6 +218,7 @@ function validateLastname() {
     return false;
   }
   if (!regexpLastName.test(inputLastName.value.trim())) {
+    // si regexp non respectée
     formfieldsObjects[1].message =
       "Le champ doit comporter seulement des caractères alphabétiques.";
     return false;
@@ -229,6 +231,7 @@ function validateLastname() {
  * @return {boolean} - Retourne vrai si l'email est valide
  */
 function validateEmail() {
+  // si regexp non respectée
   if (!regexpEmail.test(inputEmail.value.trim())) {
     formfieldsObjects[2].message = "Veuillez entrer une adresse mail valide.";
     return false;
