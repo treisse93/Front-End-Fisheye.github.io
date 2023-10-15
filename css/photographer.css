@@ -162,14 +162,14 @@ a {
   width: 100%;
 }
 
-#select-arrow.down {
+#select-arrow-down {
   position: absolute;
   right: 10px;
   width: 32px;
   height: 32px;
 }
 
-#select-arrow.up {
+#select-arrow-up {
   position: absolute;
   right: 10px;
   width: 32px;

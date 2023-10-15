@@ -24,7 +24,7 @@ const regexpEmail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
 const regexpFirstName = /^[a-zA-Z\s]+$/;
 const regexpLastName = /^[a-zA-Z\s]+$/;
 
-// Liste des objets à vérifier + conditions + messages de retour en cas d'erreur
+// Liste des objets à vérifier + conditions + messages d'erreur si besoin
 const formfieldsObjects = [
   {
     formfield: inputFirstName,
@@ -69,13 +69,6 @@ document.addEventListener("click", (e) => {
   if (e.target === modal) closeForm();
 });
 
-// Événements de validation du formulaire
-document.forms.reserve.addEventListener("submit", confirmValidation);
-document.forms.reserve.addEventListener("submit", (e) => {
-  e.preventDefault();
-  validate();
-});
-
 /**
  * Affiche la modale.
  */
@@ -104,7 +97,7 @@ function displayModal() {
     if (e.target === modal) closeForm(); // si la cible est la modal, fermer le formulaire
   });
 
-  // Événements de validation du formulaire
+  // Validation du formulaire
   document.forms.reserve.addEventListener("submit", confirmValidation);
   document.forms.reserve.addEventListener("submit", (e) => {
     e.preventDefault(); // empêche de fermer la fenêtre sans récupérer les informations
@@ -140,7 +133,7 @@ function closeForm() {
       if (e.target === modal) closeForm();
     });
 
-    // Événements de validation du formulaire
+    // Validation du formulaire
     document.forms.reserve.removeEventListener("submit", confirmValidation);
     document.forms.reserve.removeEventListener("submit", (e) => {
       e.preventDefault();

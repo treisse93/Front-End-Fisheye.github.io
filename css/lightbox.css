@@ -98,7 +98,7 @@
 
 .prev {
   /* Style du bouton précédent */
-  margin-left: -85vh;
+  margin-left: -95vh;
   transform: translateY(-50%) rotate(180deg);
 
   transition: opacity 0.5s ease;
@@ -112,6 +112,12 @@
 
 .fa-angle-right {
   font-size: 50px;
+}
+
+.fa-angle-left {
+  font-size: 50px;
+  transform: rotate(180deg);
+  margin-left: -2rem;
 }
 
 .lightbox_media-Container {
