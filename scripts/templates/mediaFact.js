@@ -135,23 +135,22 @@ class Image extends Media {
         totalLikes.innerHTML = `${
           Number(totalLikes.textContent) + 1
         } <i aria-label=' ${
-          totalLikes.textContent
+          Number(totalLikes.textContent) + 1
         } likes' class='fas fa-heart' aria-hidden='true'></i>`;
         mediaLikes.appendChild(mediaLikesIcon);
       } else {
         const newLikes = this.decreaseLikes(); //diminue nombre like
         mediaLikes.classList.remove("liked");
         mediaLikesIcon.classList.remove("fas"); //enlève coeur apect rempli
-        mediaLikesIcon.classList.add("far"); //ajoute coeur aspect vide
-        mediaLikesIcon.setAttribute("aria-hidden", "false");
-        mediaLikes.textContent = `${newLikes} `;
+        mediaLikesIcon.classList.add("far"); //ajoute coeur aspect
+        mediaLikes.innerHTML = `${newLikes} `;
         mediaLikes.removeAttribute("aria-label");
         mediaLikes.setAttribute("aria-label", `${newLikes} likes`);
         const totalLikes = document.querySelector(".TotalLikes");
         totalLikes.innerHTML = `${
           Number(totalLikes.textContent) - 1
         } <i aria-label='${
-          totalLikes.textcontent
+          Number(totalLikes.textContent) - 1
         } likes' class='far fa-heart' aria-hidden='true'></i>`;
         mediaLikes.appendChild(mediaLikesIcon);
       }
@@ -289,7 +288,7 @@ class Video extends Media {
         totalLikes.innerHTML = `${
           Number(totalLikes.textContent) + 1
         } <i aria-label='${
-          totalLikes.textcontent
+          Number(totalLikes.textContent) + 1
         } likes' class='fas fa-heart'></i>`;
         mediaLikes.appendChild(mediaLikesIcon);
       } else {
@@ -297,14 +296,15 @@ class Video extends Media {
         mediaLikes.classList.remove("liked");
         mediaLikesIcon.classList.remove("fas"); //enlève coeur apect rempli
         mediaLikesIcon.classList.add("far"); //ajoute coeur aspect vide
-        mediaLikesIcon.setAttribute("aria-hidden", "false");
-        mediaLikes.textContent = `${newLikes} `; //inscrit le nombre de like à jour
+        mediaLikes.innerHTML = `${newLikes}`; //inscrit le nombre de like à jour
         mediaLikes.removeAttribute("aria-label");
         mediaLikes.setAttribute("aria-label", `${newLikes} likes`);
         const totalLikes = document.querySelector(".TotalLikes");
         totalLikes.innerHTML = `${
           Number(totalLikes.textContent) - 1
-        } <i aria-label='likes' class='far fa-heart' aria-hidden='true'></i>`;
+        } <i aria-label='${
+          Number(totalLikes.textContent) - 1
+        } likes' class='far fa-heart' aria-hidden='true'></i>`;
         mediaLikes.appendChild(mediaLikesIcon);
       }
     });

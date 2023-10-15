@@ -75,8 +75,9 @@ Resume.appendChild(TotalLikes);
 function displayData(photograph, medias) {
   const rawMedias = MediaFact(medias);
   const mediaModels = rawMedias.mediaElements;
-  const Totalizer = rawMedias.TotalizeLikes;
-  TotalLikes.innerHTML = `${Totalizer} <i aria-label="likes" class="fas fa-heart"></i>`;
+  const Totalizer = rawMedias.TotalizeLikes; // déclaration nombre de likes
+
+  TotalLikes.innerHTML = `${Totalizer} <i aria-label="${Totalizer} likes" class="fas fa-heart"></i>`;
   selectItems.forEach((item) => {
     item.addEventListener("click", (event) => {
       event.stopPropagation();
@@ -122,10 +123,6 @@ function displayData(photograph, medias) {
     Resume.appendChild(TotalLikes);
   }
 }
-
-
-
-
 
 /**
  * Fonction d'initialisation.
