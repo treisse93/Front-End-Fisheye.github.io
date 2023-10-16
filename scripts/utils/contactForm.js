@@ -262,6 +262,18 @@ function validate() {
   return formIsTrue;
 }
 
+// affiche ce qui est contenu dans input
+inputFirstName.addEventListener("change", () => {
+  //si l'élement change
+  console.log(inputFirstName.value); //affiche la nouvelle valeur
+});
+
+// affiche ce qui est contenu dans input
+inputLastName.addEventListener("change", () => {
+  //si l'élement change
+  console.log(inputLastName.value); //affiche la nouvelle valeur
+});
+
 function confirmValidation() {
   // const valide = true; pour tester le formulaire valide
   if (validate()) {

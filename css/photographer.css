@@ -153,6 +153,9 @@ a {
   margin: 0 25px;
   border-radius: 4px;
   border: none;
+  font-family: DM Sans;
+  font-size: 18px;
+  font-weight: 700;
 }
 
 #filterField_select-label {

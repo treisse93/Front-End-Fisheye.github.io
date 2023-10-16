@@ -32,12 +32,12 @@
       <div class='FilterField'>
         <!-- création de filtre -->
         Trier par :
-        <button role='button' tabindex='0' class='filterField_select' aria-expanded='false' aria-haspopup='listbox'>
+        <button type='button' role='button' tabindex='0' class='filterField_select' aria-expanded='true'
+          aria-haspopup='listbox' aria-controls="listboxfilter">Popularité
           <span id='filterField_select-label'>
-            <span id='sortType'>Popularité </span>
             <img id='select-arrow-down' class='down' src='./assets/icons/LightboxArrowlist.svg' alt='decrease sense'>
           </span>
-          <ul role='listbox' class='filterField_select-list hidden'>
+          <ul id="listboxfilter" role='listbox' class='filterField_select-list' aria-expanded="true">
             <li role='option' id='pop' aria-selected='false' class='filterField_select-list-item'>Popularité<img
                 id='select-arrow-up' class='up' src='./assets/icons/LightboxArrowlist.svg' alt='increase sense'></li>
             <div class="line"></div>
@@ -47,6 +47,22 @@
           </ul>
         </button>
       </div>
+      <div class='FilterField'>
+        <!-- création de filtre -->
+        Trier par :
+        <button role='button' tabindex='0' class='filterField_select' aria-expanded='false' aria-haspopup='listbox'>
+
+          <select id="sortType" name="List" class='filterField_select-list'>
+            <option value="Popularité" role='option' id='pop' aria-selected='false'
+              class='filterField_select-list-item'>Popularité</option>
+            <option value="Date" role='option' id='pop' aria-selected='false' class='filterField_select-list-item'>
+              Date</option>
+            <option value="Tri" role='option' id='pop' aria-selected='false' class='filterField_select-list-item'>Tri
+            </option>
+          </select>
+        </button>
+      </div>
+
     </div>
 
   </main>
@@ -94,22 +110,22 @@
         <div class='formData'>
           <label for='first' id='firstLabel' class='text-label'>Prénom</label>
           <input class='text-control' type='text' id='first' name='first' minlength='2' autocomplete='given-name'
-            aria-autocomplete='inline' aria-labelledby='champ prénom'>
+            aria-autocomplete='inline' aria-labelledby='firstLabel'>
         </div>
         <div class='formData'>
           <label for='last' id='lastLabel' class='text-label'>Nom</label>
           <input class='text-control' type='text' id='last' name='last' minlength='2' autocomplete='family-name'
-            aria-autocomplete='inline' aria-labelledby='champ nom'>
+            aria-autocomplete='inline' aria-labelledby='lastLabel'>
         </div>
         <div class='formData'>
           <label for='email' id='emailLabel' class='text-label'>E-mail</label>
           <input class='text-control' type='email' id='email' name='email' autocomplete='off'
-            aria-labelledby='champ email'>
+            aria-labelledby='emailLabel'>
         </div>
         <div class='formData'>
           <label for='txtMsg' id='txtMsgLabel' class='text-label'>Votre message</label>
           <textarea id='txtMsg' class='text-control' name='txtMsg' minlength='50' maxlength='200'
-            aria-labelledby='champ message'></textarea>
+            aria-labelledby='txtMsg'></textarea>
         </div>
         <button class='submit-form-btn' type='submit' aria-label='Send'>Envoyer</button>
       </form>

@@ -100,6 +100,7 @@ class Image extends Media {
     img.setAttribute("src", path);
     img.setAttribute("aria-labelledby", `${this.id}`);
     img.setAttribute("alt", `${this.title}`);
+    img.setAttribute("aria-describedby", `${this.title}`);
 
     // Création des infos du media
     const MediasInfos = document.createElement("div");
@@ -252,6 +253,8 @@ class Video extends Media {
     video.setAttribute("src", path);
     video.setAttribute("alt", `${this.title}`);
     video.setAttribute("type", "video/mp4");
+    video.setAttribute("aria-labelledby", `${this.id}`);
+    video.setAttribute("aria-describedby", `${this.title}`);
 
     // Création des infos du media
     const MediasInfos = document.createElement("div");
