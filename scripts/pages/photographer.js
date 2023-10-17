@@ -45,11 +45,12 @@ const photographBody = document.querySelector(".photograph-body");
 // Récupération des médias du photographe
 let Usermedias = fullmedias.filter((media) => media.photographerId == id);
 Usermedias = sortMedia("pop", Usermedias);
-// Afficher la liste déroulante lorsque l'utilisateur clique sur le bouton
+// // Afficher la liste déroulante lorsque l'utilisateur clique sur le bouton
 selectButton.addEventListener("click", () => {
   selectButton.setAttribute("aria-expanded", "true");
   selectList.classList.remove("hidden");
 });
+
 // Fermer la liste déroulante si l'utilisateur clique en dehors du bouton et de la liste
 document.addEventListener("click", (event) => {
   const isClickInside = selectButton.contains(event.target);
@@ -61,7 +62,7 @@ document.addEventListener("click", (event) => {
 // déclare la variable du total de like
 const TotalLikes = document.createElement("p");
 TotalLikes.classList.add("TotalLikes");
-TotalLikes.setAttribute("aria-label", "Total des likes");
+TotalLikes.setAttribute("aria-describedby", "Total des likes");
 
 // Ajout des données
 photographBody.appendChild(MediasContainer);
@@ -77,7 +78,7 @@ function displayData(photograph, medias) {
   const mediaModels = rawMedias.mediaElements;
   const Totalizer = rawMedias.TotalizeLikes; // déclaration nombre de likes
 
-  TotalLikes.innerHTML = `${Totalizer} <i aria-label="${Totalizer} likes" class="fas fa-heart"></i>`;
+  TotalLikes.innerHTML = `${Totalizer} <i aria-describedby="${Totalizer} likes" class="fas fa-heart"></i>`;
   selectItems.forEach((item) => {
     item.addEventListener("click", (event) => {
       event.stopPropagation();

@@ -32,36 +32,28 @@
       <div class='FilterField'>
         <!-- création de filtre -->
         Trier par :
-        <button type='button' role='button' tabindex='0' class='filterField_select' aria-expanded='true'
-          aria-haspopup='listbox' aria-controls="listboxfilter">Popularité
-          <span id='filterField_select-label'>
-            <img id='select-arrow-down' class='down' src='./assets/icons/LightboxArrowlist.svg' alt='decrease sense'>
-          </span>
-          <ul id="listboxfilter" role='listbox' class='filterField_select-list' aria-expanded="true">
-            <li role='option' id='pop' aria-selected='false' class='filterField_select-list-item'>Popularité<img
-                id='select-arrow-up' class='up' src='./assets/icons/LightboxArrowlist.svg' alt='increase sense'></li>
-            <div class="line"></div>
-            <li role='option' id='date' aria-selected='false' class='filterField_select-list-item'>Date</li>
-            <div class="line"></div>
-            <li role='option' id='titre' aria-selected='false' class='filterField_select-list-item'>Titre</li>
-          </ul>
-        </button>
+        <ul id="exTest" class="disclosure-nav">
+          <button type='button' role='button' tabindex='0' class='filterField_select' aria-expanded='false'
+            aria-controls="listboxfilter">
+            <span id='filterField_select-label'>
+              <span id='sortType'>Popularité </span>
+            </span>
+            <ul id="listboxfilter" aria-label="listbox" role='listbox' class='filterField_select-list hidden'>
+              <li role='option' aria-label="Popularité" id='pop' aria-selected='false'
+                class='filterField_select-list-item'><a href="#mythical-page-content">Popularité</a></li>
+              <div class="line"></div>
+              <li role='option' id='date' aria-label="Date" aria-selected='false' class='filterField_select-list-item'>
+                <a href="#mythical-page-content">Date</a>
+              </li>
+              <div class="line"></div>
+              <li role='option' aria-label="Titre" id='titre' aria-selected='false'
+                class='filterField_select-list-item'><a href="#mythical-page-content">Titre</a>
+              </li>
+            </ul>
+          </button>
+        </ul>
       </div>
-      <div class='FilterField'>
-        <!-- création de filtre -->
-        Trier par :
-        <button role='button' tabindex='0' class='filterField_select' aria-expanded='false' aria-haspopup='listbox'>
 
-          <select id="sortType" name="List" class='filterField_select-list'>
-            <option value="Popularité" role='option' id='pop' aria-selected='false'
-              class='filterField_select-list-item'>Popularité</option>
-            <option value="Date" role='option' id='pop' aria-selected='false' class='filterField_select-list-item'>
-              Date</option>
-            <option value="Tri" role='option' id='pop' aria-selected='false' class='filterField_select-list-item'>Tri
-            </option>
-          </select>
-        </button>
-      </div>
 
     </div>
 

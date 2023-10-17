@@ -262,26 +262,38 @@ function validate() {
   return formIsTrue;
 }
 
-// affiche ce qui est contenu dans input
+// affiche ce qui est contenu dans input prénom
 inputFirstName.addEventListener("change", () => {
   //si l'élement change
   console.log(inputFirstName.value); //affiche la nouvelle valeur
 });
 
-// affiche ce qui est contenu dans input
+// affiche ce qui est contenu dans input nom
 inputLastName.addEventListener("change", () => {
   //si l'élement change
   console.log(inputLastName.value); //affiche la nouvelle valeur
+});
+
+// affiche ce qui est contenu dans input email
+inputEmail.addEventListener("change", () => {
+  //si l'élement change
+  console.log(inputEmail.value); //affiche la nouvelle valeur
+});
+
+// affiche ce qui est contenu dans input text
+inputText.addEventListener("change", () => {
+  //si l'élement change
+  console.log(inputText.value); //affiche la nouvelle valeur
 });
 
 function confirmValidation() {
   // const valide = true; pour tester le formulaire valide
   if (validate()) {
     console.log("Formulaire valide");
-    console.log("firstName", inputFirstName.value);
-    console.log("lastName", inputLastName.value);
-    console.log("Email", inputEmail.value);
-    console.log("message", inputText.value);
+    console.log("Prénom:", inputFirstName.value);
+    console.log("Nom:", inputLastName.value);
+    console.log("Email:", inputEmail.value);
+    console.log("message:", inputText.value);
     modalTitle.classList.add("hidden");
     modalTitle.classList.remove("visible");
     form.classList.add("hidden");

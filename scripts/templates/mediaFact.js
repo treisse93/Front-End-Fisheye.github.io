@@ -82,7 +82,7 @@ class Image extends Media {
     const mediaLink = document.createElement("a");
     mediaLink.classList.add("media-link"); //ajout de l'élement dans la class
     mediaLink.id = this.id;
-    mediaLink.setAttribute("aria-label", `${this.title}, Vue rapprochée`);
+    mediaLink.setAttribute("aria-describedby", `${this.title}, Vue rapprochée`);
     mediaLink.setAttribute("tabindex", "0");
     mediaLink.setAttribute("role", "button");
     mediaLink.setAttribute("type", "image/jpg");
@@ -98,7 +98,6 @@ class Image extends Media {
     const img = document.createElement("img"); // création élément
     img.classList.add("media"); //ajout de l'élement dans la class
     img.setAttribute("src", path);
-    img.setAttribute("aria-labelledby", `${this.id}`);
     img.setAttribute("alt", `${this.title}`);
     img.setAttribute("aria-describedby", `${this.title}`);
 
@@ -116,7 +115,7 @@ class Image extends Media {
     const mediaLikes = document.createElement("p");
     mediaLikes.classList.add("media-likes");
     mediaLikes.textContent = `${this.likes} `;
-    mediaLikes.setAttribute("aria-label", `${this.likes} likes`);
+    mediaLikes.setAttribute("aria-describedby", `${this.likes} likes`);
     //creation icone
     const mediaLikesIcon = document.createElement("i");
     mediaLikesIcon.classList.add("far", "fa-heart");
@@ -130,12 +129,12 @@ class Image extends Media {
         mediaLikesIcon.classList.remove("far"); // enlève coeur aspect vide
         mediaLikesIcon.classList.add("fas"); // ajoute coeur aspect rempli
         mediaLikes.textContent = `${newLikes}`; //inscrit le nombre de like à jour
-        mediaLikes.removeAttribute("aria-label"); // enlève nombre de like
-        mediaLikes.setAttribute("aria-label", `${newLikes} likes`); // ajoute nombre de like mis à jour
+        mediaLikes.removeAttribute("aria-describedby"); // enlève nombre de like
+        mediaLikes.setAttribute("aria-describedby", `${newLikes} likes`); // ajoute nombre de like mis à jour
         const totalLikes = document.querySelector(".TotalLikes"); //modifie le nombre total like fin de page
         totalLikes.innerHTML = `${
           Number(totalLikes.textContent) + 1
-        } <i aria-label=' ${
+        } <i aria-describedby=' ${
           Number(totalLikes.textContent) + 1
         } likes' class='fas fa-heart' aria-hidden='true'></i>`;
         mediaLikes.appendChild(mediaLikesIcon);
@@ -145,12 +144,12 @@ class Image extends Media {
         mediaLikesIcon.classList.remove("fas"); //enlève coeur apect rempli
         mediaLikesIcon.classList.add("far"); //ajoute coeur aspect
         mediaLikes.innerHTML = `${newLikes} `;
-        mediaLikes.removeAttribute("aria-label");
-        mediaLikes.setAttribute("aria-label", `${newLikes} likes`);
+        mediaLikes.removeAttribute("aria-describedby");
+        mediaLikes.setAttribute("aria-describedby", `${newLikes} likes`);
         const totalLikes = document.querySelector(".TotalLikes");
         totalLikes.innerHTML = `${
           Number(totalLikes.textContent) - 1
-        } <i aria-label='${
+        } <i aria-describedby='${
           Number(totalLikes.textContent) - 1
         } likes' class='far fa-heart' aria-hidden='true'></i>`;
         mediaLikes.appendChild(mediaLikesIcon);
@@ -184,7 +183,10 @@ class Image extends Media {
     const lightboxMedia = document.createElement("img");
     lightboxMedia.classList.add("media");
     lightboxMedia.setAttribute("src", path);
-    lightboxMedia.setAttribute("aria-label", `${this.title}, vue rapprochée`);
+    lightboxMedia.setAttribute(
+      "aria-describedby",
+      `${this.title}, vue rapprochée`
+    );
     lightboxMedia.setAttribute("alt", `${this.title}`);
     lightboxMedia.setAttribute("type", "image/jpg");
     lightboxMedia.id = this.id;
@@ -238,7 +240,7 @@ class Video extends Media {
     // Création du lien du container
     const mediaLink = document.createElement("a");
     mediaLink.classList.add("media-link");
-    mediaLink.setAttribute("aria-label", `${this.title}, Vue rapprochée`);
+    mediaLink.setAttribute("aria-describedby", `${this.title}, Vue rapprochée`);
     mediaLink.setAttribute("tabindex", "0");
     mediaLink.setAttribute("role", "button");
     mediaLink.id = this.id;
@@ -253,7 +255,6 @@ class Video extends Media {
     video.setAttribute("src", path);
     video.setAttribute("alt", `${this.title}`);
     video.setAttribute("type", "video/mp4");
-    video.setAttribute("aria-labelledby", `${this.id}`);
     video.setAttribute("aria-describedby", `${this.title}`);
 
     // Création des infos du media
@@ -270,7 +271,7 @@ class Video extends Media {
     const mediaLikes = document.createElement("p");
     mediaLikes.classList.add("media-likes");
     mediaLikes.innerHTML = `${this.likes} `;
-    mediaLikes.setAttribute("aria-label", `${this.likes} likes`);
+    mediaLikes.setAttribute("aria-describedby", `${this.likes} likes`);
     mediaLikes.setAttribute("aria-atomic", "true");
     //creation icone
     const mediaLikesIcon = document.createElement("i");
@@ -285,12 +286,12 @@ class Video extends Media {
         mediaLikesIcon.classList.remove("far"); // enlève coeur aspect vide
         mediaLikesIcon.classList.add("fas"); // ajoute coeur aspect rempli
         mediaLikes.innerHTML = `${newLikes}`; //inscrit le nombre de like à jour
-        mediaLikes.removeAttribute("aria-label"); // enlève nombre de like
-        mediaLikes.setAttribute("aria-label", `${newLikes} likes`); // ajoute nombre de like mis à jour
+        mediaLikes.removeAttribute("aria-describedby"); // enlève nombre de like
+        mediaLikes.setAttribute("aria-describedby", `${newLikes} likes`); // ajoute nombre de like mis à jour
         const totalLikes = document.querySelector(".TotalLikes"); //modifie le nombre total like fin de page
         totalLikes.innerHTML = `${
           Number(totalLikes.textContent) + 1
-        } <i aria-label='${
+        } <i aria-describedby='${
           Number(totalLikes.textContent) + 1
         } likes' class='fas fa-heart'></i>`;
         mediaLikes.appendChild(mediaLikesIcon);
@@ -300,12 +301,12 @@ class Video extends Media {
         mediaLikesIcon.classList.remove("fas"); //enlève coeur apect rempli
         mediaLikesIcon.classList.add("far"); //ajoute coeur aspect vide
         mediaLikes.innerHTML = `${newLikes}`; //inscrit le nombre de like à jour
-        mediaLikes.removeAttribute("aria-label");
-        mediaLikes.setAttribute("aria-label", `${newLikes} likes`);
+        mediaLikes.removeAttribute("aria-describedby");
+        mediaLikes.setAttribute("aria-describedby", `${newLikes} likes`);
         const totalLikes = document.querySelector(".TotalLikes");
         totalLikes.innerHTML = `${
           Number(totalLikes.textContent) - 1
-        } <i aria-label='${
+        } <i aria-describedby='${
           Number(totalLikes.textContent) - 1
         } likes' class='far fa-heart' aria-hidden='true'></i>`;
         mediaLikes.appendChild(mediaLikesIcon);
@@ -337,7 +338,10 @@ class Video extends Media {
     const lightboxMedia = document.createElement("video");
     lightboxMedia.classList.add("media");
     lightboxMedia.setAttribute("src", path);
-    lightboxMedia.setAttribute("aria-label", `${this.title}, vue rapprochée`);
+    lightboxMedia.setAttribute(
+      "aria-describedby",
+      `${this.title}, vue rapprochée`
+    );
     lightboxMedia.setAttribute("controls", "True");
     lightboxMedia.setAttribute("autoplay", "True");
     lightboxMedia.setAttribute("type", "video/mp4");
