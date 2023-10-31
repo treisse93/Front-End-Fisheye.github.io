@@ -45,10 +45,27 @@ const photographBody = document.querySelector(".photograph-body");
 // Récupération des médias du photographe
 let Usermedias = fullmedias.filter((media) => media.photographerId == id);
 Usermedias = sortMedia("pop", Usermedias);
-// // Afficher la liste déroulante lorsque l'utilisateur clique sur le bouton
+
+// Afficher la liste déroulante lorsque l'utilisateur clique sur le bouton
 selectButton.addEventListener("click", () => {
-  selectButton.setAttribute("aria-expanded", "true");
-  selectList.classList.remove("hidden");
+  console.log(selectButton.getAttribute("aria-expanded"));
+  console.log(selectButton.getAttribute("aria-expanded") === "false");
+  console.log(typeof selectButton.getAttribute("aria-expanded"));
+  if (selectButton.getAttribute("aria-expanded") === "false") {
+    selectButton.setAttribute("aria-expanded", "true");
+    selectList.classList.remove("hidden");
+  } 
+  else {
+    selectButton.setAttribute("aria-expanded", "false");
+    selectList.classList.add("hidden");
+  }
+});
+
+selectList.addEventListener("keydown", (e) => {
+  if (e.key === "Escape" || e.key === 27) {
+    selectButton.setAttribute("aria-expanded", "false");
+    selectList.classList.add("hidden");; //si touche échap, ferme la lightbox
+  }
 });
 
 // Fermer la liste déroulante si l'utilisateur clique en dehors du bouton et de la liste
@@ -59,6 +76,9 @@ document.addEventListener("click", (event) => {
     selectList.classList.add("hidden");
   }
 });
+
+
+
 // déclare la variable du total de like
 const TotalLikes = document.createElement("p");
 TotalLikes.classList.add("TotalLikes");
@@ -95,7 +115,7 @@ function displayData(photograph, medias) {
       displayData(photograph, sortedMedias);
     });
   });
-  // Affichage des médias
+  // Affichage des médias - ouverture de la lightbox
   if (medias) {
     for (let i = 0; i < mediaModels.length; i++) {
       const mediaModel = mediaModels[i];

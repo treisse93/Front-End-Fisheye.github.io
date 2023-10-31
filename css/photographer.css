@@ -158,6 +158,10 @@ a {
   font-weight: 700;
 }
 
+.filterField_select:focus {
+  border: 2px solid black;
+}
+
 #filterField_select-label {
   display: flex;
   justify-content: center;
@@ -581,10 +585,8 @@ form input {
 }
 
 .disclosure-nav ul {
-  border-radius: 0 0 4px 4px;
-  display: block;
   list-style-type: none;
-  margin-top: -60px;
+  margin-top: 0;
   padding: 0;
   position: absolute;
   top: 100%;
@@ -649,17 +651,11 @@ form input {
 
 .disclosure-nav button:focus,
 .disclosure-nav .main-link:focus {
-  outline: 5px solid #901c1c;
+  outline: 1px solid #901c1c;
   position: relative;
-}
-
-.disclosure-nav button:hover,
-.disclosure-nav button[aria-expanded="true"] {
-  background-color: #901c1c;
-  color: #fff;
 }
 
 .disclosure-nav button:hover::after,
 .disclosure-nav button[aria-expanded="true"]::after {
-  border-color: #fff;
+  border-color: black;
 }
